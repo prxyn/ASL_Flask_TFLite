@@ -1,0 +1,1 @@
+Average latency over 100 frames: 9.47 ms

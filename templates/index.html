@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Language Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .view-labels {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .descriptions {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .descriptions h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Sign Language Detection</h1>
+
+    <div class="video-container">
+        <img src="{{ url_for('video_feed') }}" alt="Video stream">
+        <div class="view-labels">
+            <span>Camera View with Landmarks</span>
+            <span>Model Input (224x224)</span>
+        </div>
+    </div>
+
+    <div class="descriptions">
+        <h2> Description</h2>
+        <p class="note">Left: Live camera feed with MediaPipe hand landmarks</p>
+        <p class="note">Right: Processed hand region fed into the model (224x224)</p>
+
+        <h2>Top Predictions</h2>
+        <p class="note">Top 3 predictions are shown in the processed view (right)</p>
+        <p class="note">Green highlight indicates the highest confidence prediction</p>
+    </div>
+</body>
+
+</html>
