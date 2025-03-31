@@ -23,12 +23,14 @@ Install dependencies using:
 ---
 
 ## Running the app
+
 ```python app.py```
 
 By default, the app runs at:
 http://127.0.0.1:5000
 
 To enable latency measurement (average inference time/100 frames)
+
 ```python app.py true```
 
 Latency is displayed in the terminal and saved to tflite_inference_latency.txt.
